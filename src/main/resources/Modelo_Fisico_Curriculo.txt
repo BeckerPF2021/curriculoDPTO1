@@ -1,0 +1,20 @@
+-- Tabela Usuário
+CREATE TABLE Usuario (
+    Id_User INT PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    Senha VARCHAR(255) NOT NULL
+);
+
+-- Tabela Currículo
+CREATE TABLE Curriculo (
+    Id_Curriculo INT PRIMARY KEY,
+    Id_User INT,
+    NomeCompleto VARCHAR(255) NOT NULL,
+    DataNascimento DATE,
+    Genero VARCHAR(50),
+    Nacionalidade VARCHAR(100),
+    Endereco VARCHAR(255),
+    TelefoneContato VARCHAR(15),
+    Email VARCHAR(255) NOT NULL,
+    FOREIGN KEY (Id_User) REFERENCES Usuario(Id_User)
+);
